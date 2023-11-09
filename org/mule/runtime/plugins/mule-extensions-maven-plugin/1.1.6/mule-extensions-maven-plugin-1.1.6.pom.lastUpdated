@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:27:46 KST 2023
+https\://repo.maven.apache.org/maven2/.lastUpdated=1699518466018
+http\://0.0.0.0/.error=Could not transfer artifact org.mule.runtime.plugins\:mule-extensions-maven-plugin\:pom\:1.1.6 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [mulesoft-plugin-releases (http\://repository.mulesoft.org/releases/, default, releases+snapshots), mulesoft-plugin-snapshots (http\://repository.mulesoft.org/snapshots/, default, releases+snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1699518465766
+https\://repo.maven.apache.org/maven2/.error=

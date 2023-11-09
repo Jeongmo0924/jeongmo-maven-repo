@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:30:01 KST 2023
+https\://repository.mulesoft.org/releases/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1699518601583
+http\://0.0.0.0/.error=Could not transfer artifact classworlds\:classworlds\:pom\:1.1-alpha-2 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [mulesoft-plugin-snapshots (http\://repository.mulesoft.org/snapshots/, default, releases+snapshots), apache.snapshots (http\://repository.apache.org/snapshots, default, snapshots), snapshots (http\://snapshots.maven.codehaus.org/maven2, default, snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1699518601578
+https\://repository.mulesoft.org/releases/.lastUpdated=1699518601577

@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:27:37 KST 2023
+https\://repository.mulesoft.org/releases/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1699518457297
+http\://0.0.0.0/.error=Could not transfer artifact com.sun.xml.fastinfoset\:FastInfoset\:pom\:1.2.13 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [mulesoft-plugin-snapshots (http\://repository.mulesoft.org/snapshots/, default, releases+snapshots), releases.java.net (http\://maven.java.net/content/repositories/releases/, default, releases+snapshots), shapshots.java.net (http\://maven.java.net/content/repositories/snapshots/, default, releases+snapshots), jvnet-nexus-staging (http\://maven.java.net/content/repositories/staging/, default, releases+snapshots), netbeans (http\://bits.netbeans.org/nexus/content/groups/netbeans, default, releases)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1699518457291
+https\://repository.mulesoft.org/releases/.lastUpdated=1699518457291

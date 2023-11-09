@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:27:43 KST 2023
+mule-extensions-maven-plugin-1.1.6.jar>mulesoft-plugin-releases=
+mule-extensions-maven-plugin-1.1.6.pom>mulesoft-plugin-releases=

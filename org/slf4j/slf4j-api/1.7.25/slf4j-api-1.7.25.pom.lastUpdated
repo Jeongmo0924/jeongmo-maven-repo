@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:27:03 KST 2023
+https\://repository.mulesoft.org/releases/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1699518423053
+http\://0.0.0.0/.error=Could not transfer artifact org.slf4j\:slf4j-api\:pom\:1.7.25 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [mulesoft-plugin-snapshots (http\://repository.mulesoft.org/snapshots/, default, releases+snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1699518423042
+https\://repository.mulesoft.org/releases/.lastUpdated=1699518423041

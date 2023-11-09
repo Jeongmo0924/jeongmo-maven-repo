@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.mule.runtime</groupId>
+    <artifactId>mule-extension-ast-loader</artifactId>
+    <version>1.0.1</version>
+    <name>Mule Extension AST Loader</name>
+    <description>Mule Extension AST Loader</description>
+    <url>https://github.com/mulesoft/mule-extensions-ast-loader</url>
+
+    <organization>
+        <name>MuleSoft, Inc.</name>
+        <url>http://www.mulesoft.com</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>CPAL v1.0</name>
+            <url>http://www.mulesoft.com/CPAL</url>
+        </license>
+    </licenses>
+    <mailingLists>
+        <mailingList>
+            <name>developers</name>
+            <post>mule-esb@mulesoft.com</post>
+        </mailingList>
+    </mailingLists>
+
+    <scm>
+        <connection>scm:git:git://github.com/mulesoft/mule-extensions-ast-loader.git</connection>
+        <developerConnection>scm:git:git@github.com:mulesoft/mule-extensions-ast-loader.git</developerConnection>
+        <url>https://github.com/mulesoft/mule-extensions-ast-loader</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>canoasan</id>
+            <name>Matias Baldini</name>
+            <email>matias.baldini@mulesoft.com</email>
+            <roles>
+                <role>Project Manager</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>aiannucci</id>
+            <name>Alejandro Iannucci</name>
+        </developer>
+        <developer>
+            <id>afelisatti</id>
+            <name>Ana Felisatti</name>
+        </developer>
+        <developer>
+            <id>alegmarra</id>
+            <name>Alejandro Garcia Marra</name>
+        </developer>
+        <developer>
+            <id>anosenzo</id>
+            <name>Alejandro Nosenzo</name>
+        </developer>
+        <developer>
+            <id>dfeist</id>
+            <name>Daniel Feist</name>
+        </developer>
+        <developer>
+            <id>elrodro83</id>
+            <name>Rodrigo Merino</name>
+        </developer>
+        <developer>
+            <id>estebanwasinger</id>
+            <name>Esteban Wasinger Espro</name>
+        </developer>
+        <developer>
+            <id>fsgonz</id>
+            <name>Fabian Gonzalez</name>
+        </developer>
+        <developer>
+            <id>gsfernandes</id>
+            <name>Guillermo Fernandes</name>
+        </developer>
+        <developer>
+            <id>juandesi</id>
+            <name>Juan Desimoni</name>
+        </developer>
+        <developer>
+            <id>lucianoRM</id>
+            <name>Luciano Raineri</name>
+        </developer>
+        <developer>
+            <id>ndinu</id>
+            <name>Nicolas Di Nucci</name>
+        </developer>
+        <developer>
+            <id>mbuchwald</id>
+            <name>Martin Buchwald</name>
+        </developer>
+        <developer>
+            <id>pablolagreca</id>
+            <name>Pablo La Greca</name>
+        </developer>
+    </developers>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <mule.version>4.1.1</mule.version>
+        <metadata.version>1.1.1</metadata.version>
+
+        <aspectjVersion>1.8.10</aspectjVersion>
+        <allureJunitVersion>2.0-BETA17</allureJunitVersion>
+        <allureReportVersion>2.3.4</allureReportVersion>
+        <allure.maven.plugin.version>2.8</allure.maven.plugin.version>
+        <jacoco.version>0.7.9</jacoco.version>
+        <javaFormatter.plugin.version>2.0.1</javaFormatter.plugin.version>
+        <javaVersion>1.8</javaVersion>
+        <formatterConfigPath>formatter.xml</formatterConfigPath>
+        <formatterGoal>validate</formatterGoal>
+        <skipVerifications>false</skipVerifications>
+
+        <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-extensions-support</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-extensions-spring-support</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-metadata-model-java-ast</artifactId>
+            <version>${metadata.version}</version>
+        </dependency>
+        <!--Test dependencies-->
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-extensions-support</artifactId>
+            <version>${mule.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.tests</groupId>
+            <artifactId>mule-tests-unit</artifactId>
+            <version>${mule.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.tests</groupId>
+            <artifactId>mule-petstore-extension</artifactId>
+            <version>${mule.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.testing.compile</groupId>
+            <artifactId>compile-testing</artifactId>
+            <version>0.14</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-metadata-model-persistence</artifactId>
+            <version>${metadata.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <encoding>ISO-8859-1</encoding>
+                        <fork>true</fork>
+                        <maxmem>512m</maxmem>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                        <proc>none</proc>
+                        <!-- Slightly faster builds, see https://jira.codehaus.org/browse/MCOMPILER-209 -->
+                        <useIncrementalCompilation>false</useIncrementalCompilation>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                        </compilerArgs>
+                        <testCompilerArgument>-parameters</testCompilerArgument>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.mule.runtime.plugins</groupId>
+                    <artifactId>mule-extensions-maven-plugin</artifactId>
+                    <version>${mule.extensions.maven.plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>2.8</version>
+                    <configuration>
+                        <header>LICENSE_HEADER.txt</header>
+                        <excludes>
+                            <exclude>target/**</exclude>
+                            <exclude>**/.gitignore</exclude>
+                            <exclude>**/*.txt</exclude>
+                            <exclude>**/*.groovy</exclude>
+                            <exclude>**/*.sh</exclude>
+                            <exclude>**/*.bat</exclude>
+                            <exclude>**/*.ftl</exclude>
+                            <exclude>**/*.xml</exclude>
+                            <exclude>**/*.properties</exclude>
+                            <exclude>**/*.sample</exclude>
+                            <exclude>**/*.md</exclude>
+                            <exclude>**/*.xsl</exclude>
+                            <exclude>**/*.html</exclude>
+                            <exclude>**/*.css</exclude>
+                            <exclude>**/build-number.txt</exclude>
+                            <exclude>**/*.wsdl</exclude>
+                        </excludes>
+                        <includes>
+                            <include>**/*.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+                <version>${javaFormatter.plugin.version}</version>
+                <configuration>
+                    <compilerCompliance>${javaVersion}</compilerCompliance>
+                    <compilerSource>${javaVersion}</compilerSource>
+                    <compilerTargetPlatform>${javaVersion}</compilerTargetPlatform>
+                    <configFile>${basedir}/${formatterConfigPath}</configFile>
+                    <configJsFile>${basedir}/${formatterConfigPath}</configJsFile>
+                    <aggregator>false</aggregator>
+                    <executionRoot>true</executionRoot>
+                    <encoding>ISO-8859-1</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>apply-format</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>${formatterGoal}</goal>
+                        </goals>
+                        <configuration>
+                            <skipFormatting>${skipVerifications}</skipFormatting>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <configuration>
+                    <skip>${skipVerifications}</skip>
+                    <header>com/mycila/maven/plugin/license/templates/CPAL.txt</header>
+                    <properties>
+                        <owner>MuleSoft, Inc</owner>
+                        <project.url>http://www.mulesoft.com</project.url>
+                    </properties>
+                    <excludes>
+                        <exclude>target/**</exclude>
+                        <exclude>**/.gitignore</exclude>
+                        <exclude>**/*.txt</exclude>
+                        <exclude>**/*.groovy</exclude>
+                        <exclude>**/*.sh</exclude>
+                        <exclude>**/*.bat</exclude>
+                        <exclude>**/*.ftl</exclude>
+                        <exclude>**/*.xml</exclude>
+                        <exclude>**/*.properties</exclude>
+                        <exclude>**/*.sample</exclude>
+                        <exclude>**/*.md</exclude>
+                        <exclude>**/*.xsl</exclude>
+                        <exclude>**/*.html</exclude>
+                        <exclude>**/*.css</exclude>
+                        <exclude>**/build-number.txt</exclude>
+                        <exclude>**/*.wsdl</exclude>
+                    </excludes>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <mapping>
+                        <java>SLASHSTAR_STYLE</java>
+                    </mapping>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archive>
+                        <!--
+                            Disabled for http://mule.mulesoft.org/jira/browse/MULE-1153
+                            and http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4408526
+                         -->
+                        <index>false</index>
+                        <!-- List dependencies in the MANIFEST.MF -->
+                        <manifest>
+                            <!-- Note that we do not generate a classpath into the manifest, since doing so
+                                 significnatly slows down compilations that use the jar -->
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Date>${maven.build.timestamp}</Build-Date>
+                        </manifestEntries>
+                        <!-- Custom Entries -->
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>mule</id>
+            <name>Mule Repository</name>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot Repository</name>
+            <url>http://repo.spring.io/snapshot/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mule-plugin</id>
+            <name>Mule Repository</name>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>mule-releases</id>
+            <name>Mule Release Repository</name>
+            <url>https://repository-master.mulesoft.org/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>mule-snapshots</id>
+            <name>Mule Snapshot Repository</name>
+            <url>https://repository-master.mulesoft.org/nexus/content/repositories/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <skipVerifications>false</skipVerifications>
+                <skipGpg>false</skipGpg>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <additionalparam>${xDocLint}</additionalparam>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <skip>${skipGpg}</skip>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>${maven.enforcer.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>enforce-no-snapshots-in-deps</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireReleaseDeps>
+                                            <message>No Snapshots Allowed in Deps!</message>
+                                        </requireReleaseDeps>
+                                        <requireReleaseVersion>
+                                            <message>No Snapshots Allowed in Project Version!</message>
+                                        </requireReleaseVersion>
+                                        <requirePluginVersions>
+                                            <message>Best Practice is to always define plugin versions!</message>
+                                            <unCheckedPluginList>
+                                                org.apache.maven.plugins:maven-plugin-plugin,
+                                                org.apache.maven.plugins:maven-site-plugin,
+                                                org.apache.maven.plugins:maven-resources-plugin,
+                                                org.apache.maven.plugins:maven-jar-plugin,
+                                                org.apache.maven.plugins:maven-clean-plugin,
+                                                org.apache.maven.plugins:maven-install-plugin,
+                                                org.apache.maven.plugins:maven-deploy-plugin,
+                                                org.apache.maven.plugins:maven-source-plugin,
+                                                org.apache.maven.plugins:maven-javadoc-plugin,
+                                                org.apache.maven.plugins:maven-surefire-plugin
+                                            </unCheckedPluginList>
+                                        </requirePluginVersions>
+                                    </rules>
+                                    <skip>${skipNoSnapshotsEnforcerPluginRule}</skip>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

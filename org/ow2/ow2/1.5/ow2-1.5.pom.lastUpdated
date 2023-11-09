@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:29:42 KST 2023
+https\://repository.mulesoft.org/releases/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1699518582623
+http\://0.0.0.0/.error=Could not transfer artifact org.ow2\:ow2\:pom\:1.5 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [mulesoft-plugin-snapshots (http\://repository.mulesoft.org/snapshots/, default, releases+snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1699518582619
+https\://repository.mulesoft.org/releases/.lastUpdated=1699518582618

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:30:30 KST 2023
+mule-jp-characters-converter-0.0.1-extension-model-4.1.1.json>=
+mule-jp-characters-converter-0.0.1-mule-plugin.jar>=
+mule-jp-characters-converter-0.0.1.pom>=

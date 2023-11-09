@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 09 17:29:05 KST 2023
+https\://repository.mulesoft.org/releases/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1699518545789
+http\://0.0.0.0/.error=Could not transfer artifact org.codehaus.plexus\:plexus-containers\:pom\:1.7.1 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [mulesoft-plugin-snapshots (http\://repository.mulesoft.org/snapshots/, default, releases+snapshots), apache.snapshots (http\://repository.apache.org/snapshots, default, snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1699518545783
+https\://repository.mulesoft.org/releases/.lastUpdated=1699518545783
